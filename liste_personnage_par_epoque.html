@@ -1,51 +1,43 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>Menu principal</title> 
+	<title>Liste personnages par époques</title> <!--A CHANGER SELON LE NOM-->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<link rel="stylesheet" href="css/jquery-mobile-theme-01/themes/retro_style.css" />
 	<link rel="stylesheet" href="css/jquery-mobile-theme-01/themes/jquery.mobile.icons.min.css" />
 	  
+	  
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+	  
 	<link rel="stylesheet" href="css/base.css" />
 	<link rel="stylesheet" href="css/menu.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
-  
-  
-<!--script-->
+	<link rel="stylesheet" href="css/liste_epoques.css" />
+
+<!--script-->  
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
 	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
-</head>
- 
+</head> 
 <body> 
+
 <div data-role="page">
-	<div data-role="header" data-position="fixed" id="menu_fixe">
-	
-<!-- data-icon="nom_icone" ça affiche l'icône qui porte ce nom-->	
-<!-- data-iconpos="notext" permet de ne pas afficher le nom du bouton c'est seulement pour les lecteurs d'écran -->	
-<!-- data-corners="false" ça enlèves les coins arrondis du bouton/icone -->	
 
-	<!-- bouton qui fait sortir le menu de gauche-->
-	<a href="#menu_gauche" data-icon="icon_header_bars" data-iconpos="notext" data-corners="false">Menu</a>
-		<h1><a href="index.html">Rétrospective</a></h1><!-- redirection vers la page d'accueil menu-->
+	<div data-role="header" data-position="fixed" id="menu_fixe" >
+	<a href="#menu_gauche" data-icon="icon_header_bars" data-iconpos="notext">Menu</a>
+		<h1><a href="index.html">Rétrospective</a></h1>
+
+		<!--search filter bar --> 
+		<div data-inline="true" id="search_bar">
+			<ul data-filter="true" >
+			</ul><!-- /search filter bar -->
+			
+<!-- bouton OK -->
+<!-- 		<input type="submit" name="ok" value="Rechercher" data-inline="true" data-mini="true" data-role="button" id="search"/>-->
+		</div> 
 	</div><!-- /header -->
-
-	<div data-role="content" id="content">	
 	
-<div data-role="navbar" id="menu">
-	<ul>
-		<li><a href="liste_lieux.html" rel="external" id="lieux"><img src="img/menu/icon_lieux.png" alt="" data-prefetch="true"/>Lieux</a></li>
-		<li><a href="proximite.html" rel="external" id="proxi"><img src="img/menu/icon_proximite.png" alt=""/>A proximité</a></li>
-		<li><a href="liste_persos.html" rel="external" id="perso"><img src="img/menu/icon_perso.png" alt=""/>Personnage</a></li>
-		<li><a href="liste_epoques.html" rel="external" id="epoque"><img src="img/menu/icon_epoque.png" alt=""/>Epoque</a></li>
-		<li><a href="liste_arr.html" rel="external" id="arr"><img src="img/menu/icon_arr.png" alt=""/>Arrondissement</a></li>
-		<li><a href="ajout_lieu.html" rel="external" id="ajout_lieux"><img src="img/menu/icon_ajout_lieu.png" alt=""/>Ajouter un lieu</a></li>
-	</ul>
-</div><!-- /navbar -->
-	</div><!-- /content -->
-	
-	
-		<!-- MENU de GAUCHE -->
+						<!-- MENU de GAUCHE -->
 	<div data-role="panel" id="menu_gauche" data-display="reveal" data-position="left" data-transition="slide">
 			<ul data-role='listview' data-icon="false">
 				<li>Fiches
@@ -76,10 +68,30 @@
 			</ul>
 	</div><!-- MENU de GAUCHE -->
 	
+	<div data-role="content">
+	<div id="page_title">
+	<a href="index.html" data-role="button" data-icon="bouton_l" data-iconpos="notext" data-rel="back">Retour</a>
+		<h1>Epoque primaire</h1><!--A CHANGER SELON LE NOM-->
+	</div><!-- /page_title -->
+
+	
+
+<!-- CONTENU Liste des personnages -->	
+			<div class="contenu_liste">
+			
+	<br/><!--LI A CHANGER avec la BDD-->
+				<ul data-role='listview' data-icon="false" id="ul_liste_perso_par_epoque">
+					<li><a href="personnage.html"><img src="img/menu/menu_gauche/icon_small_lieu.png" alt=""/>Voltaire</a></li>
+					<li><a href="#"><img src="img/menu/menu_gauche/icon_small_lieu.png" alt=""/>Rousseau</a></li>
+					<li><a href="#"><img src="img/menu/menu_gauche/icon_small_lieu.png" alt=""/>Gainsbourg</a></li>
+				</ul>
+			</div>			
+
+	</div><!-- /content -->
 </div><!-- /page -->
 
 <!-- script pour afficher menu de gauche  -->
-<script text="text/javascript" src="js/menu_gauche.js"></script> 
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment-with-langs.js"></script>
+	<script text="text/javascript" src="js/menu_gauche.js"></script> 
+	
 </body>
 </html>

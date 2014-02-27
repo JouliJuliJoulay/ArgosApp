@@ -1,0 +1,17 @@
+#page_title{
+border-left: 7px solid #66929f;
+}
+
+form{
+padding: 30px;
+}
+
+
+#button_cancel_sign {
+margin-left: 24%;
+}
+
+#button_cancel_sign input{
+background-color: red; /*pour center le bouton*/
+color: #E66A52;
+}

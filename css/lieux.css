@@ -1,0 +1,129 @@
+/*bordure gauche du titre de la page*/
+#page_title {
+border-color: #6E997B;
+}
+
+/*taille police de toutes la page*/
+div, ul li a, p{font-size: 13px;} 
+a:link, a:visited{
+color: #e76952;
+}
+
+/*******************PAGE TITLE***********************/
+/*à revoir pour le vert ou rouge*/
+#etat_lieu {
+/*cerle*/
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 
+	border: 1px black solid;
+}
+
+
+/*******************BANNIERE PHOTO*********************/
+/*A revoiiiir*/
+/*permet de mettre l'img sur tte la largeur de l'écran*/
+#banniere_lieu img{
+width: 100%;
+margin-top: 1px;
+}
+
+
+/******INFO_LIEU*******/
+#info_lieu ul, #note_utilisateur ul {
+display: table-cell;
+vertical-align: top;
+padding-left: 0;/*supprimer le padding*/
+width: 50%; /*ça change aussi la largeur du select*/
+}
+
+
+/********NOTE********/
+#note_utilisateur{
+    color: #e76952; 
+}
+
+/*taille bouton note*/
+#note-button {
+width: 20%;
+}
+
+
+#info_lieu li , #note_utilisateur ul li {list-style: none;}
+
+/*********GALRIE PHOTO UTILISATEUR***********/
+#galerie_photo {
+width: 100%;
+text-align: center; /*center les photos*/
+}
+
+.gallery-item{
+display: inline; /*aligner les photos*/
+} 
+
+.gallery-item img {
+    width: 32%; /*taille photo*/
+}
+
+/******LIEU FREQUENTE PAR***************/
+/*pour que la case ait la même largeur que les autres*/
+#lieu_frequente_par {
+margin: 0;
+}
+
+/*espace au-dessus de 'lieux fréquentés par' & zone_commentaire*/
+#lieu_frequente_par, #zone_commentaire{
+padding-top: 12px;
+}
+
+/*les liens de la listview sans coin arrondi*/
+#lieu_frequente_par .ui-controlgroup-controls li a{
+border-radius: 0;
+}
+
+/**buuuuuuuuuuuuuuuuuuuuuuUUG il ça ne marche pas***/
+/***BUUUUUG, ça change la couleur du bouton menu***/
+/*lien des lieux fréquentés par*/
+.ui-page-theme-a .ui-btn #lieu_frequente_par ul li a:link{
+/* background-color: #618585; */
+background-color: yellow;
+font-weight: lighter;
+color: white;
+}
+
+.ui-page-theme-a .ui-btn:active{
+background-color: #3f5e5e;
+color: white;
+}
+
+
+
+/*****************COMMENTAIRES******************/
+#zone_com_utilisateur img {
+float: left;
+padding-right: 10px;
+} /*pas utilisé pour le moment*/
+
+#zone_com_utilisateur .com_utilisateur{
+border-top: 1px solid #cccccc;
+padding-top: 15px;
+} 
+
+#zone_com_utilisateur  li{list-style:none;}
+/*taille du nom, date et titre des commentaires*/
+.nom_user {font-size: 16px;}
+.titre {font-size: 14px;}
+.date {font-size: 12px; font-style: italic;}
+
+
+/*cadre*/
+#info_lieu, #descrip_lieu, #note_utilisateur, #zone_commentaire, p{
+padding: 12px 12px;
+text-align: justify;
+margin: 0 15px; /*espace entre les div et le body*/
+background: #f8f6ea;
+margin: 0;
+}

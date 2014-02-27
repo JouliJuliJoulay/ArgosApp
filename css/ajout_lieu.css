@@ -1,0 +1,27 @@
+/*bordure gauche du titre de la page*/
+#page_title {
+border-color: #98d669;
+}
+
+
+
+/*bouton + fréquenté par*/
+#form_frequente_par, #form_photo{
+background: url('../img/form_bouton_plus.png') no-repeat right;
+position: relative;
+right: -28px;
+}
+
+/*taille boutons liste arr + liste note*/
+#form_arr-button, #form_note-button {
+width: 30%;
+}
+
+/*espace entre les boutons */
+form .ui-field-contain, .ui-field-contain {
+border-bottom: none; 
+padding: 2px;
+}
+
+
+

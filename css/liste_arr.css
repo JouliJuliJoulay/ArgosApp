@@ -1,0 +1,9 @@
+/*bordure gauche du titre de la page*/
+#page_title {
+border-color: #6C96A4;
+}
+
+/*texte des boutons de la listeview*/
+.ui-listview > li > a.ui-btn {
+text-align: center;
+}

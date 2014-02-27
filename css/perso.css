@@ -1,0 +1,90 @@
+/*bordure gauche du titre de la page*/
+#page_title {
+border-color: #CA583E;
+}
+
+/*image pour qu'elle soit au dessus de tout*/
+img {
+position: relative;
+z-index: 5;
+}
+
+/*taille police de toutes la page*/
+div, ul li a{font-size: 14px;}
+
+
+/***STATUT + DATE****/
+#info p{
+text-align: center;
+font-size: 18px;
+padding: 3px 75px 3px; /*pour placer les texte au milieu*/
+width: 100%;
+position: absolute;
+}
+/*2ème enfant de #info --> premier p (statut)*/
+#info p:nth-child(2){ 
+top: 130px;
+}
+/*2ème enfant de #info --> dernier p(date)*/
+#info p:last-child{ 
+top: 200px;
+}
+
+
+
+/**********OEUVRES + LIEUX FREQUENTE***********/
+/*padding pour bio + oeuvre */
+#biographie, #oeuvres{
+padding: 12px 12px;
+text-align: justify;
+}
+
+/*pour la partie Amazon*/
+#amazon {
+list-style: none;
+color: black;
+text-align: center;
+margin-left: -25px;
+}
+
+/*emplacement de l'img amazon*/
+#amazon img {
+margin: -10px 0 10px 0;
+}
+
+/*liens oeuvres */
+#oeuvres ul li a {
+color :#e76952;
+font-weight: lighter;
+}
+
+#oeuvres ul li a:active {
+color :#d0583c;
+}
+
+
+
+/*****************LIEUX FREQUENTES*****************/
+/*espace au-dessus de 'lieux fréquentés'*/
+#lieu_frequente {
+padding-top: 12px;
+}
+
+/*les liens de la listview sans coin arrondi*/
+#lieu_frequente .ui-controlgroup-controls li a{
+border-radius: 0;
+}
+
+
+/***BUUUUUG, ça change la couleur du bouton menu***/
+/*lien des lieux fréquentés*/
+.ui-page-theme-a .ui-btn{
+background-color: #618585;
+font-weight: lighter;
+color: white;
+}
+
+.ui-page-theme-a .ui-btn:active{
+background-color: #3f5e5e;
+color: white;
+}
