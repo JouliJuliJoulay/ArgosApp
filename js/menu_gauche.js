@@ -57,7 +57,7 @@ $(document).on('pageinit',function(){
         }
         $(document).bind("deviceready",function () {
             $("#takePhotoButton").bind("tap", function() {
-                navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 1});
+                navigator.camera.getPicture(captureSuccess, captureError, {limit: 1});
             });
         });
 	
