@@ -4,19 +4,115 @@
 	<title>Menu principal</title> 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="css/jquery-mobile-theme-01/themes/retro_style.css" />
-	<link rel="stylesheet" href="css/jquery-mobile-theme-01/themes/jquery.mobile.icons.min.css" />
+	<!-- <link rel="stylesheet" href="css/jquery-mobile-theme-01/themes/retro_style.css" /> -->
+<!-- 	<link rel="stylesheet" href="css/jquery-mobile-theme-01/themes/jquery.mobile.icons.min.css" /> -->
 	  
 	<link rel="stylesheet" href="css/base.css" />
 	<link rel="stylesheet" href="css/menu.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" /> -->
   
   
 <!--script-->
-	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
-	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
+	<!-- <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>  -->
 	
-	<script text="text/javascript" src="js/camera.js"></script> 
+	<style id="camera_css" type="text/css">
+	#smallImage:hover{
+	width: 300px;
+	height: 225px;
+	}
+	</style>
+
+
+    <script type="text/javascript" charset="utf-8">
+
+    var pictureSource;   // picture source
+    var destinationType; // sets the format of returned value
+
+    // Charger l'API camera
+    //
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    // API prête, disponible
+    //
+    function onDeviceReady() {
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoDataSuccess(imageData) {
+      // Uncomment to view the base64-encoded image data
+      // console.log(imageData);
+
+      // Get image handle
+      //
+      var smallImage = document.getElementById('smallImage');
+
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    // Called when a photo is successfully retrieved
+    //
+    function onPhotoURISuccess(imageURI) {
+      // Uncomment to view the image file URI
+      // console.log(imageURI);
+
+      // Get image handle
+      //
+      var smallImage = document.getElementById('smallImage');
+
+      // Unhide image elements
+      //
+      smallImage.style.display = 'block';
+
+      // Show the captured photo
+      // The inline CSS rules are used to resize the image
+      //
+      smallImage.src = imageURI;
+    }
+
+    // A button will call this function
+    //
+    function capturePhoto() {
+      // Take picture using device camera and retrieve image as base64-encoded string
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+    }
+
+    // A button will call this function
+    //
+    function capturePhotoEdit() {
+      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+        destinationType: destinationType.DATA_URL });
+    }
+
+    // A button will call this function
+    //
+    function getPhoto(source) {
+      // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });		
+    }
+
+    // Called if something bad happens.
+    //
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
+
+    </script>
+	
 </head>
  
 <body> 
@@ -77,11 +173,17 @@
 					<li><a href="#" rel="external"><img src="img/menu/menu_gauche/icon_small_parametres.png" alt="">Paramètres</a></li>
 			</ul>
 	</div><!-- MENU de GAUCHE -->
-	
+	<img src="img/capture_picture.png" alt="Prendre une photo" /><button onclick="capturePhoto();">Prendre une photo</button> <br>
+    <!-- <button  onclick="capturePhotoEdit();">Capture Editable Photo</button> <br> -->
+     <img src="img/add_picture.png" alt="Ajouter une photo" /><button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Ajouter une photo</button><br>
+    <!-- <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>-->
+
+    <img style="display:none;width:120px;height:90px;" id="smallImage" src="" />
+	</div><!-- /galerie photo-->
 </div><!-- /page -->
 
 <!-- script pour afficher menu de gauche  -->
 <script text="text/javascript" src="js/menu_gauche.js"></script> 
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment-with-langs.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment-with-langs.js"></script> -->
 </body>
 </html>
