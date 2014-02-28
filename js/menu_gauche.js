@@ -47,4 +47,18 @@ $(document).on('pageinit',function(){
         return false;
     }); //FIN gestion onglet	
 
+	
+	
+	 function captureSuccess(mediaFiles) {
+            navigator.notification.alert('Success taking picture:');
+        }        
+        function captureError(mediaFiles) {
+            navigator.notification.alert('Error taking picture: ' + error.code);
+        }
+        $(document).bind("deviceready",function () {
+            $("#takePhotoButton").bind("tap", function() {
+                navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 1});
+            });
+        });
+	
 });

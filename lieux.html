@@ -23,19 +23,7 @@
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
 	<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
 	
-	<script> 
-        function captureSuccess(mediaFiles) {
-            navigator.notification.alert('Success taking picture:');
-        }        
-        function captureError(mediaFiles) {
-            navigator.notification.alert('Error taking picture: ' + error.code);
-        }
-        $(document).bind("deviceready",function () {
-            $("#takePhotoButton").bind("tap", function() {
-                navigator.device.capture.captureImage(captureSuccess, captureError, {limit: 1});
-            });
-        });
-</script>
+
 </head> 
 <body> 
 
