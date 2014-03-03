@@ -23,6 +23,7 @@ $ajout_noteLieu = mysql_real_escape_string($_POST["form_note"]);
 $ajout_photoLieu = mysql_real_escape_string($_POST["form_photo"]);
 $ajout_comLieu = mysql_real_escape_string($_POST["form_commentaire"]);
 
+mysql_query("SET NAMES UTF8"); //résoud le pb d'encodage: affiche les données avec accents retourner par le serveur 
 $sqlajoutlieu = "INSERT INTO retro_ajout_lieu (form_name, form_typelieu, form_rue, form_arr, form_tel, form_url, form_description, form_source, form_frequente_par, form_note, form_photo, form_commentaire) VALUES ('$ajout_nomLieu', '$ajout_typeLieu', '$ajout_nrueLieu','$ajout_arrLieu','$ajout_telLieu','$ajout_siteLieu','$ajout_descripLieu','$ajout_srcLieu','$ajout_lieuFreqBy','$ajout_noteLieu', '$ajout_photoLieu', '$ajout_comLieu')";
 
 
