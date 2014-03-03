@@ -21,16 +21,7 @@
 				if(nomLieu == '' || typeLieu == '' ||nrueLieu == '' || arrLieu == '' ||descripLieu == '' || srcLieu == '' ||lieuFreqBy == '' || noteLieu == '' || comLieu =='') {
 				alert('Veillez remplir tous les champs requis!');
 				document.location.href="ajout_lieu.html";
-					// nomLieu.remove();
-					// typeLieu.remove();
-					// nrueLieu.remove();
-					// arrLieu.remove();
-					// descripLieu.remove();
-					// srcLieu.remove();
-					// lieuFreqBy.remove();
-					// noteLieu.remove();
-					// comLieu.remove();
-					
+	
 				} else {
 				  
 				   var postDatalieu = $(this).serialize();
@@ -42,6 +33,8 @@
                                 //do your thing
                                 console.log('Lieu ajouté!');
 								alert('Votre lieu a bien été enregistrée ! Nous allons cherché plus d\'information sur '+nomLieu+' Merci d\'avoir partagé'); 
+								
+								document.location.href="ajout_lieu.html";
 								// j'affiche cette réponse
 
                         },
